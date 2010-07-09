@@ -25,9 +25,9 @@ setup(name='django-taggit-templatetags',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'django>=1.1',
-          'django-taggit>=0.8',
-          'django-templatetag-sugar=>0.1'          
+          'django >= 1.1',
+          'django-taggit >= 0.8',
+          'django-templatetag-sugar >= 0.1'          
       ],
       entry_points="""
       # -*- Entry points: -*-
