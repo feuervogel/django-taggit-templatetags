@@ -1,0 +1,7 @@
+{% load taggit_extras %}
+{% get_taglist as tags for forvar %}
+<ul>
+{% for tag in tags %}
+<li>{{tag}}</li>
+{% endfor %}
+</ul>

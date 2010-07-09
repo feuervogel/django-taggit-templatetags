@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+django_taggit_templatetags.egg-info/PKG-INFO
+django_taggit_templatetags.egg-info/SOURCES.txt
+django_taggit_templatetags.egg-info/dependency_links.txt
+django_taggit_templatetags.egg-info/entry_points.txt
+django_taggit_templatetags.egg-info/not-zip-safe
+django_taggit_templatetags.egg-info/top_level.txt
+djangotaggittemplatetags/__init__.py

@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: django-taggit-templatetags
+Version: 0.1dev
+Summary: Templatetags for django-taggit.
+Home-page: UNKNOWN
+Author: Julian Moritz
+Author-email: jumo@gmx.de
+License: BSD
+Description: ...
+Keywords: django taggit tags tagcloud taglist
+Platform: UNKNOWN
