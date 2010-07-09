@@ -3,6 +3,12 @@ from django.template import Context, Template
 
 from taggit_templatetags.tests.models import AlphaModel, BetaModel
 from taggit.tests.tests import BaseTaggingTest
+"""
+>>> 1+1 == 3
+True
+>>>
+"""
+
 
 class TemplateTagListTestCase(BaseTaggingTest):
     a_model = AlphaModel

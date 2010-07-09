@@ -1,1 +1,1 @@
-from taggit_templatetags.tests.tests import TemplateTagListTestCase, TemplateTagCloudTestCase
+from taggit_templatetags.tests.tests import (TemplateTagListTestCase, TemplateTagCloudTestCase)
