@@ -103,7 +103,7 @@ TAGGIT_TAGCLOUD_MIN (default: 1.0)
 TAGGIT_TAGCLOUD_MAX (default: 6.0) 
     This specifies the maximum of the weight attribute of a tagcloud's tags.
     
-If you want to use the weight as font-sizes, you can it do as follows::
+If you want to use the weight as font-sizes, just do as follows::
 
     <font size={{tag.weight|floatformat:0}}>{{tag}}</font> 
     
@@ -114,6 +114,6 @@ Thanks
 
 Thanks to the python- and django-community, in particular to `Alex Gaynor`_, the inventor of django-taggit_ and a wonderful guy to argue with.
  
-.. _django-taggit: http://github.com/alex/django-taggit
+.. _django-taggit: http://pypi.python.org/pypi/django-taggit
 .. _tagcloud: http://www.wikipedia.org/wiki/Tagcloud
 .. _Alex Gaynor: http://alexgaynor.net/

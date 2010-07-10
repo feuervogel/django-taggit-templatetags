@@ -21,7 +21,7 @@ setup(name='django-taggit-templatetags',
       author_email='jumo@gmx.de',
       url='http://github.com/feuervogel/django-taggit-templatetags',
       license='BSD',
-      packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+      packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       install_requires=[
