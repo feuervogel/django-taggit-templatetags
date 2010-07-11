@@ -67,8 +67,11 @@ def get_tagcloud(context, asvar, forvar=None):
     context[asvar] = queryset
     return ''
     
-def tag_include(forvar):
+def include_tagcloud(forvar=None):
     return {'forvar': forvar}
-    
-register.inclusion_tag('taggit_templatetags/taglist_include.html')(tag_include)
-register.inclusion_tag('taggit_templatetags/tagcloud_include.html')(tag_include)
+
+def include_taglist(forvar=None):
+    return {'forvar': forvar}
+  
+register.inclusion_tag('taggit_templatetags/taglist_include.html')(include_taglist)
+register.inclusion_tag('taggit_templatetags/tagcloud_include.html')(include_tagcloud)

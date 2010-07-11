@@ -1,5 +1,11 @@
 {% load taggit_extras %}
+
+{% if forvar %}
 {% get_tagcloud as tags for forvar %}
+{% else %}
+{% get_tagcloud as tags %}
+{% endif %}
+
 <div>
 {% for tag in tags %}
 <font size={{tag.weight|floatformat:0}}>{{tag}}</font> 
