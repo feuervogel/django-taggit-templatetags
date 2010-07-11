@@ -8,7 +8,7 @@ setup(name='django-taggit-templatetags',
       description="Templatetags for django-taggit.",
       long_description=open("README.rst", "r").read(),
       classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
