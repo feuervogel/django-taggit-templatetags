@@ -11,7 +11,7 @@ Just install ``django-taggit-templatetags`` via ``pip``::
 
     $ pip install django-taggit-templatetags
     
-After installing and configuring django-taggit_, just add ``taggit_templatetags`` to your INSTALLED_APPS in your ``settings.py``::
+After installing and configuring django-taggit_, just add ``taggit_templatetags`` to your ``INSTALLED_APPS`` in your ``settings.py``::
 
     INSTALLED_APPS = (
     ...
@@ -22,7 +22,7 @@ After installing and configuring django-taggit_, just add ``taggit_templatetags`
 Usage
 =====
 
-Now there are some templatetags enabled. At the moment mainly to create lists of tags and tag-clouds.
+Now there are some templatetags enabled, at the moment only to create lists of tags and tag-clouds.
 
 In your templates, you need to load ``taggit_extras``::
 
@@ -61,7 +61,7 @@ As you can see, each tag has an attribute ``num_times`` which declares how many 
 Inclusion-Tag
 -------------
 
-For convenience, there's a inclusion-tag. It's used analogue. For example, for a taglist of a model, just do::
+For convenience, there's an inclusion-tag. It's used analogue. For example, for a taglist of a model, just do::
 
     {% include_taglist 'yourapp.yourmodel' %}
 
