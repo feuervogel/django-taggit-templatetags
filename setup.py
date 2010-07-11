@@ -16,7 +16,7 @@ setup(name='django-taggit-templatetags',
         'Programming Language :: Python',
         'Framework :: Django',
         ], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      keywords='django taggit tags tagcloud taglist',
+      keywords='django taggit tags tagcloud taglist tagging tag',
       author='Julian Moritz',
       author_email='jumo@gmx.de',
       url='http://github.com/feuervogel/django-taggit-templatetags',
