@@ -6,7 +6,7 @@ from taggit_templatetags import VERSION
 setup(name='django-taggit-templatetags',
       version=".".join(map(str, VERSION)),
       description="Templatetags for django-taggit.",
-      long_description=open("README.rst", "r").read(),
+      long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
       classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
