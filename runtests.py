@@ -3,7 +3,6 @@
 import sys
 from os.path import dirname, abspath
 from django.conf import settings
-from django.test.simple import run_tests
 
 if not settings.configured:
     settings.configure(
@@ -15,6 +14,8 @@ if not settings.configured:
             'taggit_templatetags.tests'            
         ]
     )
+
+from django.test.simple import run_tests
 
 def runtests(*test_args):
     if not test_args:
