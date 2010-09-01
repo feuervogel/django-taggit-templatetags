@@ -32,4 +32,5 @@ setup(name='django-taggit-templatetags',
       entry_points="""
       # -*- Entry points: -*-
       """,
+      test_suite = "runtests.runtests"
       )
