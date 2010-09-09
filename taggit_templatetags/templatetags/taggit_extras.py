@@ -42,7 +42,13 @@ def get_queryset(forvar=None):
 
 def get_weight_fun(t_min, t_max, f_min, f_max):
     def weight_fun(f_i, t_min=t_min, t_max=t_max, f_min=f_min, f_max=f_max):
-        mult_fac = float(t_max-t_min)/float(f_max-f_min)
+        # Prevent a division by zero here, found to occur under some
+        # pathological but nevertheless actually occurring circumstances.
+        if f_max == f_min:
+            mult_fac = 1.0
+        else:
+            mult_fac = float(t_max-t_min)/float(f_max-f_min)
+            
         return t_max - (f_max-f_i)*mult_fac
     return weight_fun
 
