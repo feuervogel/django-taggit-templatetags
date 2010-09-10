@@ -156,3 +156,61 @@ class TemplateInclusionTagTest(SetUpTestCase, TestCase, BaseTaggingTest):
         t.render(c)
         self.assert_tags_equal(c.get("tags"), ["green", "sweet", "yellow"], False)
         
+        
+class AlphaPathologicalCaseTestCase(TestCase, BaseTaggingTest):
+    """
+    This is a testcase for one tag once.
+    """
+    a_model = AlphaModel
+    def setUp(self):
+        a1 = self.a_model.objects.create(name="apple")
+        a1.tags.add("green")
+        
+    def test_tagcloud(self):
+        t = get_template('taggit_templatetags/tagcloud_include.html')
+        c = Context({'forvar': None})
+        t.render(c)
+        self.assert_tags_equal(c.get("tags"), ["green"], False)
+        self.assertEqual(c.get("tags")[0].name, "green")
+        self.assertEqual(c.get("tags")[0].weight, 6.0)  
+        
+class BetaPathologicalCaseTestCase(TestCase, BaseTaggingTest):
+    """
+    This is a testcase for one tag thrice.
+    """
+    a_model = AlphaModel
+    b_model = BetaModel
+    
+    def setUp(self):
+        a1 = self.a_model.objects.create(name="apple")
+        a2 = self.a_model.objects.create(name="pear")
+        b1 = self.b_model.objects.create(name="dog")
+        a1.tags.add("green")
+        a2.tags.add("green")
+        b1.tags.add("green")
+        
+    def test_tagcloud(self):
+        t = get_template('taggit_templatetags/tagcloud_include.html')
+        c = Context({'forvar': None})
+        t.render(c)
+        self.assert_tags_equal(c.get("tags"), ["green"], False)
+        self.assertEqual(c.get("tags")[0].name, "green")
+        self.assertEqual(c.get("tags")[0].weight, 6.0)  
+        
+class GammaPathologicalCaseTestCase(TestCase, BaseTaggingTest):
+    """
+    This is a pathological testcase for no tag at all.
+    """
+    a_model = AlphaModel
+    b_model = BetaModel
+    
+    def setUp(self):
+        a1 = self.a_model.objects.create(name="apple")
+        b1 = self.b_model.objects.create(name="dog")
+        
+    def test_tagcloud(self):
+        t = get_template('taggit_templatetags/tagcloud_include.html')
+        c = Context({'forvar': None})
+        t.render(c)
+        self.assert_tags_equal(c.get("tags"), [], False)
+        
