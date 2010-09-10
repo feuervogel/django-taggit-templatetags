@@ -38,7 +38,7 @@ def get_queryset(forvar=None):
         # get tags
         tag_ids = queryset.values_list('tag_id', flat=True)
         queryset = Tag.objects.filter(id__in=tag_ids)
-    return queryset.annotate(num_times=Count('taggit_taggeditem_items'))
+    return queryset.annotate(num_times=Count('taggeditem_items'))
 
 def get_weight_fun(t_min, t_max, f_min, f_max):
     def weight_fun(f_i, t_min=t_min, t_max=t_max, f_min=f_min, f_max=f_max):
