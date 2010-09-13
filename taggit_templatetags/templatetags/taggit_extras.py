@@ -1,6 +1,7 @@
 from django import template
 from django.db import models
 from django.db.models import Count
+from django.core.exceptions import FieldError
 
 from templatetag_sugar.register import tag
 from templatetag_sugar.parser import Name, Variable, Constant, Optional, Model
@@ -38,7 +39,12 @@ def get_queryset(forvar=None):
         # get tags
         tag_ids = queryset.values_list('tag_id', flat=True)
         queryset = Tag.objects.filter(id__in=tag_ids)
-    return queryset.annotate(num_times=Count('taggeditem_items'))
+    
+    # Retain compatibility with older versions of Django taggit
+    try:
+        return queryset.annotate(num_times=Count('taggeditem_items'))
+    except FieldError:
+        return queryset.annotate(num_times=Count('taggit_taggeditem_items'))
 
 def get_weight_fun(t_min, t_max, f_min, f_max):
     def weight_fun(f_i, t_min=t_min, t_max=t_max, f_min=f_min, f_max=f_max):
