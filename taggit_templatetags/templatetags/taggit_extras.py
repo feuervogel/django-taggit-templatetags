@@ -5,6 +5,7 @@ from django.db.models import Count
 from templatetag_sugar.register import tag
 from templatetag_sugar.parser import Name, Variable, Constant, Optional, Model
 
+from taggit import VERSION as TAGGIT_VERSION
 from taggit.managers import TaggableManager
 from taggit.models import TaggedItem, Tag
 from taggit_templatetags import settings
@@ -38,7 +39,10 @@ def get_queryset(forvar=None):
         # get tags
         tag_ids = queryset.values_list('tag_id', flat=True)
         queryset = Tag.objects.filter(id__in=tag_ids)
-    return queryset.annotate(num_times=Count('taggeditem_items'))
+    if TAGGIT_VERSION <= (0, 8, 0):
+        return queryset.annotate(num_times=Count('taggit_taggeditem_items'))
+    else:
+        return queryset.annotate(num_times=Count('taggeditem_items'))
 
 def get_weight_fun(t_min, t_max, f_min, f_max):
     def weight_fun(f_i, t_min=t_min, t_max=t_max, f_min=f_min, f_max=f_max):
