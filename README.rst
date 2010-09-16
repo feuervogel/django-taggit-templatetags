@@ -112,9 +112,9 @@ So the weights are converted to integer values.
 Thanks
 ======
 
-Thanks to the python- and django-community, in particular to `Alex Gaynor`_, the inventor of django-taggit_ and a wonderful guy to argue with. Thanks to `dokterbob`_ as well for his helpful pull requests.
+Thanks to the python- and django-community, in particular to `Alex Gaynor`_, the inventor of django-taggit_ and a wonderful guy to argue with. Thanks to `Mathijs de Bruin`_ as well for his helpful pull requests.
  
 .. _django-taggit: http://pypi.python.org/pypi/django-taggit
 .. _tagcloud: http://www.wikipedia.org/wiki/Tagcloud
 .. _Alex Gaynor: http://alexgaynor.net/
-.. _dokterbob: http://github.com/dokterbob
+.. _Mathijs de Bruin: http://github.com/dokterbob

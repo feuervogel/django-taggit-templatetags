@@ -42,7 +42,7 @@ def get_queryset(forvar=None):
         queryset = Tag.objects.filter(id__in=tag_ids)
 
     # Retain compatibility with older versions of Django taggit
-    # a version check (for example taggit.VERSION <= (0,8,0) does NOT
+    # a version check (for example taggit.VERSION <= (0,8,0)) does NOT
     # work because of the version (0,8,0) of the current dev version of django-taggit
     try:
         return queryset.annotate(num_times=Count('taggeditem_items'))
