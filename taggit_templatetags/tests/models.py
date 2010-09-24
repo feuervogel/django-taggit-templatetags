@@ -4,6 +4,7 @@ from taggit.managers import TaggableManager
 
 class BaseModel(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    tags = TaggableManager()
     
     def __unicode__(self):
         return self.name
@@ -12,7 +13,7 @@ class BaseModel(models.Model):
         abstract = True 
 
 class AlphaModel(BaseModel):
-    tags = TaggableManager()
+    pass
 
 class BetaModel(BaseModel):
-    tags = TaggableManager()
+    pass
